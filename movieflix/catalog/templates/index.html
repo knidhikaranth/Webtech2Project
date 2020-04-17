@@ -1,0 +1,653 @@
+
+{% extends "base_generic.html" %}
+
+{% load static %}
+{% load cache %}
+{% cache 500 content %}
+{% block content %}
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+			<div class="main-grids">
+				
+				
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h3>Latest Movies</h3>
+						</div>
+						<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+						 <script>
+							// You can also use "$(window).load(function() {"
+							$(function () {
+							  // Slideshow 4
+							  $("#slider3").responsiveSlides({
+								auto: true,
+								pager: false,
+								nav: true,
+								speed: 500,
+								namespace: "callbacks",
+								before: function () {
+								  $('.events').append("<li>before event fired.</li>");
+								},
+								after: function () {
+								  $('.events').append("<li>after event fired.</li>");
+								}
+							  });
+						
+							});
+						  </script>
+						  
+							<div  id="top" class="callbacks_container">
+							<ul class="rslides" id="slider3">
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="http://127.0.0.1:8000/catelog/{{ latest.1.title }}"><img src="http://image.tmdb.org/t/p/w185//{{ latest.1.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.1.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.1.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.1.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.1}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.2.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.2.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.2.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.2.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.2}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.3.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.3.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.3.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.3.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.3}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.4.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.4.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.4.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.4.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.4}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.5.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.5.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.5.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.5.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.5}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.6.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.6.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.6.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.6.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.6}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.7.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.7.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.7.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.7.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.7}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.8.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.8.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.8.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.8.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.8}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.9.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.9.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.9.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.9.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.9}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.10.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.11.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.10.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.10.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.10}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.11.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.11.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.11.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.11.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.11}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.12.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.12.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.12.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.12.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.12}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.13.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.13.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.13.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.13.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.13}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.14.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.14.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.14.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.14.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.14}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.15.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.15.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.15.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.15.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.15}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ latest.16.poster_path }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ latest.16.runtime }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.16.title }}</a></h4>
+												<h5><a class="title">Released on : {{ latest.16.release_dat}}</a></h6>
+												<h5><a class="title" style="color: blue">{{ genres.16}}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h3>Top Rated Movies</h3>
+						</div>
+						<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+						 <script>
+							// You can also use "$(window).load(function() {"
+							$(function () {
+							  // Slideshow 4
+							  $("#slider4").responsiveSlides({
+								auto: true,
+								pager: false,
+								nav: true,
+								speed: 500,
+								namespace: "callbacks",
+								before: function () {
+								  $('.events').append("<li>before event fired.</li>");
+								},
+								after: function () {
+								  $('.events').append("<li>after event fired.</li>");
+								}
+							  });
+						
+							});
+						  </script>
+						  
+							<div  id="top" class="callbacks_container">
+							<ul class="rslides" id="slider4">
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.0.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.0.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.0.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.0.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.0 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.1.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.1.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.1.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.1.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.1 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.2.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.2.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.2.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.2.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.2 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.3.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.3.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.3.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.3.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.3 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.4.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.4.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.4.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.4.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.4 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.5.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.5.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.5.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.5.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.5 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.6.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.6.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.6.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.6.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.6 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.7.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.7.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.7.0 }}</a></h4>
+											<h5><a class="title">Critic score: {{ top.7.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.7 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.8.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.8.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.8.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.8.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.8 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.9.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.9.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.9.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.9.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.9 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.10.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.10.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ latest.11.title }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.10.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.10 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.11.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.11.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.11.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.11.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.11 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+								<li>
+									<div class="animated-grids">
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.12.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.12.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.12.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.12.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.12 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.13.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.13.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.13.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.13.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.13 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.14.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.14.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.14.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.14.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.14 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="col-md-3 resent-grid recommended-grid slider-first">
+											<div class="resent-grid-img recommended-grid-img">
+												<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ top.15.1 }}" style="height: 250px" width: 100px" alt="" /></a>
+
+												<div class="time small-time slider-time">
+													<p>{{ top.15.2 }} mins</p>
+												</div>
+											
+											</div>
+											<div class="resent-grid-info recommended-grid-info">
+												<h4><a href="single.html">{{ top.15.0 }}</a></h4>
+												<h5><a class="title">Critic score: {{ top.15.6|floatformat }}</a></h6>
+												<h5><a class="title" style="color: blue">{{ topgenres.15 }}</a></h6>
+												
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			
+			</div>
+			<!-- //footer -->
+		</div>
+		<div class="clearfix"> </div>
+	<div class="drop-menu">
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+		</ul>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    {% endblock %}
+    {% endcache %}
+  </body>
+</html>
