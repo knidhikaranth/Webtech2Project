@@ -1,0 +1,95 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends "singlemenu.html" %}
+
+{% load static %}
+{% block content %}
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="show-top-grids">
+				<div class="col-sm-8 single-left">
+					<div class="song">
+						<div class="song-info">
+							<div id="titled" style="visibility:hidden;"><h3>{{ details.title }}</h3></div>	
+					</div>
+						<div class="video-grid">
+							<iframe  id="vidoe" style="visibility:hidden;" src="{% static 'images/movie.mp4' %}" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="song-grid-right" id = "published" style="visibility:hidden;">
+						<div class="share">
+							<h5>Share this</h5>
+							<ul>
+								<li><a href="#" class="icon fb-icon">Facebook</a></li>
+								<li><a href="#" class="icon dribbble-icon">Dribbble</a></li>
+								<li><a href="#" class="icon twitter-icon">Twitter</a></li>
+								<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
+								<li><a href="#" class="icon whatsapp-icon">Whatsapp</a></li>
+								
+								<li><a href="#" class="icon comment-icon">Comments</a></li>
+								
+							</ul>
+							
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+					<div class="published">
+						
+							<script type="text/javascript">
+								setTimeout(function(){
+document.getElementById('published').style.visibility = "visible";
+},4000);
+
+
+								setTimeout(function(){
+document.getElementById('paragraph').style.visibility = "visible";
+},5500);
+
+
+
+							</script>
+							<div class="load_more">	
+								
+							</div>
+					</div>
+					
+				</div>
+				<div class="col-md-4 single-right" id="paragraph" style="visibility:hidden;">
+					<h3>Details:</h3>
+					<h4>Release Date:</h4>
+					<h5>{{ details.release_dat }}</h5>
+					<h4>Overview:</h4>
+					<h5>{{ details.overview }}</h5>
+					<h4>Genres:</h4>
+					<h4>{{ genres }}</h4>
+					<h4>Your rating:</h4>
+					<h4>{{ ratings }}</h4>
+					
+		<form action="{{ request.build_absolute_uri }}rate/", method="POST">
+			{% csrf_token %}
+  <input type="number" id="quantity" name="quantity" min="1" max="5" value="">
+  <input type="submit" Value="Rate">
+</form>	
+	<!-- //footer -->
+		</div>
+		<div class="clearfix"> </div>
+	<div class="drop-menu">
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+		</ul>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  </body>
+</html>
+ {% endblock %}

@@ -1,0 +1,76 @@
+
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			
+				<div class="col-sm-10 show-grid-left main-grids">
+					
+							<div class="recommended-info">
+								<div class="heading">
+									<h3>A-Z Movies</h3>
+								</div>
+								
+							
+
+							{% if movie_list %}
+							{% for mov in movie_list %}
+							{% if forloop.counter0|divisibleby:6 %}
+				<div class="recommended">
+						<div class="recommended-grids">
+							<div class="recommended-info">
+								<div class="heading">
+								
+								</div>
+								<div class="heading-right">
+									<a  href="#small-dialog8" class="play-icon popup-with-zoom-anim" style="visibility: hidden;"></a>
+								</div>
+								<div class="clearfix"> </div>
+							</div>							
+							{% endif %}
+							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
+								<div class="resent-grid-img recommended-grid-img">
+									<a href="single.html"><img src="http://image.tmdb.org/t/p/w185//{{ mov.poster_path }}" style="height: 200px" alt="{% static 'images/t3.jpg' %}" /></a>
+									<div class="time small-time show-time">
+										<p>7:34</p>
+									</div>
+									<div class="clck show-clock">
+										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="resent-grid-info recommended-grid-info">
+									<h5><a href="single.html" class="title">{{ mov.title }}</a></h5>
+									<p class="author"><a href="#" class="author">John Maniya</a></p>
+									<p class="views">1,200 views</p>
+								</div>
+							</div>
+							
+							{% endfor %}
+							
+							{% endif %} 
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					
+			<!-- //footer -->
+		</div>
+		<div class="clearfix"> </div>
+	<div class="drop-menu">
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+		</ul>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+
+        {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Full Secondary Column, 1/3 x 1/3 x 1/3 Main Column.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+<link rel="stylesheet" type="text/css" href="styles.css" >
+<script>
+function init(){
+			xhr = new XMLHttpRequest;	
+			if(xhr)
+			{
+				xhr.onreadystatechange = getPublished;
+				
+			}	
+		}
+
+
+function getPublished(){
+		
+			xhr.open("GET", "{{movies.release_dat}}", true);
+			xhr.onreadystatechange = showPublished;
+			
+			xhr.send();
+		}
+
+function showPublished()
+		{
+			if(xhr.readyState == 4 && xhr.status == 200)
+			{
+				document.getElementById("published").innerHTML = xhr.responseText;
+				setTimeout(getTitle,2000);
+			}
+			
+		}
+
+function getTitle(){
+		
+				xhr.onreadystatechange=showTitle;
+				xhr.open("GET","{{movies.title}}",true);
+				xhr.send();
+		}
+
+
+
+function showTitle()
+		{
+			if(xhr.readyState == 4 && xhr.status == 200)
+			{
+				document.getElementById("title").innerHTML = xhr.responseText;
+				setTimeout(getDetails,2000);
+			}
+			
+		}
+
+function getDetails(){
+		
+				xhr.onreadystatechange=showDetails;
+				xhr.open("GET","{{movies.genre}}",true);
+				xhr.send();
+		}
+
+function showDetails(){
+		
+				if(xhr.readyState==4 && xhr.status==200){
+					document.getElementById("details").innerHTML=xhr.responseText
+					
+					setTimeout(getVideo,4000);
+				}
+		
+		
+		}
+
+function getVideo(){
+			
+			xhr.onreadystatechange=playvideo;
+			xhr.open("GET","{{movies.video}}");
+			xhr.send();
+		}
+
+function playvideo(){
+			if(xhr.readyState==4 && xhr.status==200)
+				document.getElementById("video").innerHTML=xhr.responseText;
+		}
+
+
+</script>
+</head >
+<body onload="init()">
+  <div id="bd">
+    <div id="yui-main">
+      <div class="yui-b">
+        <div class="yui-gb">
+          <div class="yui-u first">
+		  <div class="content" id="published"></div>
+            
+          </div>
+          <div class="yui-u">
+            <div class="content" id="title"></div>
+          </div>
+          <div class="yui-u">
+            <div class="content" id="details"></div>
+          </div>
+	  <div class="yui-u">
+            <div class="content" id="video"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="secondary"></div>
+    </div>
+  </div>
+  <div id="ft">
+    <div id="footer"></div>
+  </div>
+</div>
+</body>
+</html>
+
